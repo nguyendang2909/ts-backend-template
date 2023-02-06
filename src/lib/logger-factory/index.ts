@@ -13,7 +13,8 @@ class LoggerFactory {
           format: 'DD/MM/YY HH:mm:ss'
         }),
         format.printf(
-          ({ level, message, label, timestamp }) => `${timestamp} [${label}] ${level}: ${message}`
+          ({ level, message, label, timestamp, stack }) =>
+            `${timestamp} [${label}] ${level === 'error' ? stack : `${level}: ${message}`}`
         )
       ),
       transports: [
