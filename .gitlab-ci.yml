@@ -1,0 +1,19 @@
+image: node
+
+stages:
+  - lint
+
+eslint:
+  stage: lint
+  script:
+    # Install eslint
+    - |
+      npm install eslint \
+      @typescript-eslint/eslint-plugin \
+      @typescript-eslint/parser \
+      eslint-config-prettier \
+      eslint-plugin-prettier
+
+    # Run eslint
+    # - node_modules/eslint/bin/eslint.js .
+    - npm run eslint
