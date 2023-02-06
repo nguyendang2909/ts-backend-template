@@ -7,6 +7,7 @@ class LoggerFactory {
 
     return createLogger({
       format: format.combine(
+        format.errors({ stack: true }),
         format.label({ label: filePath }),
         format.timestamp({
           format: 'DD/MM/YY HH:mm:ss'

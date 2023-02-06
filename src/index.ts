@@ -6,6 +6,6 @@ const logger = loggerFactory.getLogger(__filename);
   try {
     console.log(111);
   } catch (err) {
-    logger.error(err.stack || err);
+    logger.error(err);
   }
 })();
